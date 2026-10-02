@@ -1,0 +1,57 @@
+/******************************************************************************
+
+Q10 - Online Store Invoice and Shipping Boxes
+
+I - unit price, quantity, discount percentage, shipping fee Boxes
+    and units per box 
+
+P - Compute subtotal = unit price x quantity
+    Compute discount amount and Discounted merchandise subtotal
+    Compute exact boxes = quantity / units per box using floating-point
+            then boxes required using cell()
+    Compute shipping total = boxes required x shipping fee per boxes
+                             and final amount due
+
+O - Print Receipt using newline and tab escape sequence.
+    Display all money to two(2) decimals and the exact box 
+
+*******************************************************************************/
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+    int quantity, unitPrice, boxReq, exactBox;
+    
+     float unitprice, box, shipFeeBox, perBox,
+    FinalAmnt, SubTotal, DisAmnt, Shipping, discount;
+    string USB_C_Cable_Pack;
+
+    //INPUT
+    
+        cout<<"ENTER Price: ";
+            cin>>unitprice;    
+        cout<<"ENTER Quantity: ";
+            cin>>quantity;
+        cout<<"ENTER Discount: ";
+            cin>>discount;
+             cout<<"ENTER ShipFee Box: ";
+            cin>>shipFeeBox;
+         cout<<"ENTER Units Box: ";
+            cin>>perBox;
+            
+    //Process 
+        SubTotal = unitprice * quantity;
+        DisAmnt = (discount/100) * (unitprice - DisAmnt);
+        exactBox = quantity / perBox;
+        Shipping = boxReq * shipFeeBox;
+
+    //OUTPUT
+        cout<<"Discount: "<<DisAmnt;
+   
+    return 0;
+}
