@@ -1,0 +1,46 @@
+/******************************************************************************
+
+Q07 - Emergency Drone Distance Calculator
+
+I - x1, y1, x2, and y2 as floating-point values
+
+P - Compute dx = x2 - x1 and dy = y2 - y1
+    Use the Distance Formula sqrt(ow(dx,2)+ pow(dy,2))
+
+O - Display dx, dy and Final Distance to three(3) decimal places
+    Display the rounded whole-unit distance using round()
+
+*******************************************************************************/
+#include <iostream>
+#include <math.h>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    int x1, x2, y1, y2;
+    float dx, dy, distForm;
+    
+    //INPUT
+        cout<<"Enter Beginning: x1 & y1 Values: ";
+            cin>> x1>>y1;
+        cout<<"Enter Destination: x2 & y2 Values: ";
+            cin>> x2>>y2;
+       
+    //PROCESS
+        dx = x2 - x1;
+        dy = y2 - y1;
+        distForm =sqrt(pow(dx,2)+ pow(dy,2));
+
+    //Output
+        cout<<"dx Result: "<<fixed<<setprecision(3)<<dx<<endl;
+        cout<<"dy Result: "<<fixed<<setprecision(3)<<dy<<endl;
+        
+        cout<<"Distance: "<<round(distForm)<<endl;
+        cout<<"Distance: "<<int(distForm);
+        
+
+    return 0;
+}
