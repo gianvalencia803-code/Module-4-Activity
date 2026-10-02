@@ -1,0 +1,60 @@
+/******************************************************************************
+
+Q2 - Scholarship Grade Summary
+
+I - four scores at decimal values (quizzes, labrotory, project, examination)
+P - Compute the four weighted grade using the given percentages
+O - Display the exact weighted grade in two decimal places
+    Display its rounded whole-number value using round()
+    Display interger-trunicated version using an explicit cast so students can
+            compare truncation with rounding.
+
+*******************************************************************************/
+#include <iostream>
+#include<math.h>
+#include<iomanip>
+
+using namespace std;
+
+int main()
+{
+    //Declaration
+    
+    int score;
+    double quizScore,labScore,projectScore,examScore;
+    //Input
+        cout<<"Enter Quiz Score: ";
+        cin>> quizScore;
+
+        cout<<"Enter Labrotory Score: ";
+        cin>> labScore;
+        
+        cout<<"Enter Project Score: ";
+        cin>> projectScore;
+        
+        cout<<"Enter Exam Score: ";
+        cin>> examScore;
+    
+    //Process
+    
+        double Score1 = 0.2 * quizScore;
+        double Score2 = 0.25 * labScore;
+        double Score3 = 0.25 * projectScore;
+        double Score4 = 0.3 * examScore;
+
+        float weightedGrade = Score1+Score2+Score3+Score4;
+        
+    
+    //Output
+    
+        cout<<"Quiz Score: "<<Score1<<endl;
+        cout<<"Lab Score: "<<Score2<<endl;
+        cout<<"Project Score: "<<Score3<<endl;
+        cout<<"Exam Score: "<<Score4<<endl;
+        
+        cout<<"Weighted Grade: "<<fixed<<setprecision(2)<<weightedGrade<<endl;
+        cout<<"Rounded: "<<round(weightedGrade)<<endl;
+        cout<<"Cast to Int: "<<int(weightedGrade)<<endl;
+        
+    return 0;
+}
