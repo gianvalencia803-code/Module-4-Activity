@@ -1,0 +1,72 @@
+/******************************************************************************
+
+Q03 - Ride Sharing Fare Split
+
+I - Base fare, distance in kilometers, rph, toll fee, booking-fee,
+    and # of passangers
+
+P - Compute distance charge = distance x rate per kilometers
+    Compute pre-fee total = base fare + distance charge + toll
+    Compute booking fee from the pre-fee total, 
+            then compute the grand total.
+    Compute & Display the amount each passanger pays to two decimal 
+                      places.
+
+O - Display the amount each passanger pays to two decimal 
+                      places.
+                      
+
+*******************************************************************************/
+#include <iostream>
+#include <math.h>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    float baseFare, distKm, rpk, tollFee, bookFee, numPassenger;
+
+    //INPUT
+        cout<<"Enter Fare: ";
+        cin>> baseFare;
+    
+        cout<<"Enter Distance in Kilometers: ";
+        cin>> distKm;
+    
+        cout<<"Enter Rate per Kilometers: ";
+        cin>> rpk;
+    
+        cout<<"Enter Toll Fee: ";
+        cin>> tollFee;
+    
+        cout<<"Enter Booking Fee: ";
+        cin>> bookFee;
+    
+        cout<<"Enter Number of Passenger: ";
+        cin>> numPassenger;
+        
+    //PROCESS
+        double distCharge = distKm * rpk;
+        double PrefeTol = baseFare + distCharge + tollFee;
+        double bookingFee = (bookFee / 100) * PrefeTol;
+        double grandTotal = PrefeTol + bookingFee;
+        double ratePassenger = grandTotal/numPassenger;
+        
+        
+        
+    //OUTPUT
+        cout<<"Distance Charge = Distance x Rate per Kilometers: "
+        <<fixed<<setprecision(2)<<distCharge<<endl;
+        cout<<"Subtotal = Base Fare + Distance Charge + Toll Fee: "
+        <<fixed<<setprecision(2)<<PrefeTol<<endl;
+        
+        cout<<"Booking Fee: "<<bookingFee<<endl;
+        cout<<"Total = Subtotal x Booking Fee: "
+        <<fixed<<setprecision(2)<<grandTotal<<endl;
+        
+        cout<<"Rate per Passanger: "
+        <<fixed<<setprecision(2)<<ratePassenger<<endl;
+        
+    return 0;
+}
