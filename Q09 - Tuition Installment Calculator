@@ -1,0 +1,57 @@
+/******************************************************************************
+
+Q09 - Tuition Installment Calculator
+
+I - Base Tuition, Processing-fee Percentage, down-payment amount,
+    & # of monthly installments.
+
+P - Compute processing fee from the base tuition 
+    Compute Adjusted Tuition = base tuition + processing fee 
+    Compute Remaining Balance = adjusted tuition - down payment 
+    Compute Monthly Installment = remaining balance / # of installments
+
+O - Display all monetary results to two decimal places with clear labels
+
+*******************************************************************************/
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <math.h>
+
+using namespace std;
+
+// Case 1: tuition = 28000, Fee = 2.5%, Down = 8000, Months = 5
+
+int main()
+{
+    int Tuition, Down, ProcessFee, AdjTuition; 
+    float Fee, PerDec, MonthInst, RemBal, Months;
+
+    //INPUT 
+        cout<<"ENTER Base Tuition: ";
+            cin>>Tuition;
+        cout<<"ENTER Processing Fee: ";
+            cin>>Fee;    
+        cout<<"ENTER Down Payment: ";
+            cin>>Down;
+        cout<<"ENTER Months: ";
+            cin>>Months;
+        
+    //PROCESS 
+        PerDec = Fee/100;
+        ProcessFee = Tuition * PerDec;
+        AdjTuition = Tuition + ProcessFee;
+        RemBal = AdjTuition - Down;
+        MonthInst = RemBal / Months;
+            
+    //OUTPUT
+        cout<<"Processing Fee: "<<fixed<<setprecision(2)
+                                <<double(ProcessFee)<<endl;
+        cout <<"Adjusted Tuition: "<<fixed<<setprecision(2)
+                                <<double(AdjTuition)<<endl;
+        cout<<"Balance: "<<RemBal<<fixed<<setprecision(2)<<endl;
+        cout<<"Monthly: "<<fixed<<setprecision(2)<<MonthInst;
+
+
+    return 0;
+}
