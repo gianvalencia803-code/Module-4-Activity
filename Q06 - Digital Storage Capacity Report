@@ -15,25 +15,35 @@ O - Display KB and MB to Two decimal places, GB four decimal places
 *******************************************************************************/
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 
 using namespace std;
 
 int main()
 {
-    int selByte, ByConv, KBConv, MBConv1,MBConv2;
-    double Byte = 1024.0;
+    int selByte, ByConv, KBConv;
+    double Byte = 1024.0; 
+    double MBConv, GBConv;
     
     //Input
         cout<<"Input Byte: \n (KB,MB,GB) ";
             cin>>selByte;
             
     //Process
-        ByConv = (selByte/Byte);
+        ByConv = selByte/Byte;
         KBConv = abs(ByConv);
-        //10485760/1,048.0 = 10,1005.496183206 turn to 10
-        MBConv1 = (selByte/Byte) / Byte;
+        //10485760/1,024 = 10,240 KB
+        MBConv = (selByte/Byte) / Byte;
+        //(10485760/1,024)/1,024 = 10 MB
+        GBConv = (MBConv / Byte);
         
+        
+
     //Output
         cout<<"KB = "<<KBConv<<endl;
-        cout<<"MB = "<<MBConv1;
+        cout<<"MB = "<<fixed<<setprecision(2)<<double(MBConv)<<endl;
+        cout<<"MB (Whole) = "<<MBConv<<endl;
+        cout<<"GB = "<<fixed<<setprecision(4)<<GBConv;
+        
     return 0;
+}
