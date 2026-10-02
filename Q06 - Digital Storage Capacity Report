@@ -1,0 +1,39 @@
+/******************************************************************************
+
+Q06 - Digital Storage Capacity Report
+
+I - file_size in bytes - a type capable of holding large whole
+                         numbers.
+        Use 1 KB = 1024 bytes, 1 MB = 1024 KB, & 1 GB = 1024 MB 
+        
+P - Convert bytes to KB, MB, & GB using floating-point calculation
+
+O - Display KB and MB to Two decimal places, GB four decimal places
+    Display the whole-number MB portion by explicity casting the MB 
+    value to an integer type.
+
+*******************************************************************************/
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    int selByte, ByConv, KBConv, MBConv1,MBConv2;
+    double Byte = 1024.0;
+    
+    //Input
+        cout<<"Input Byte: \n (KB,MB,GB) ";
+            cin>>selByte;
+            
+    //Process
+        ByConv = (selByte/Byte);
+        KBConv = abs(ByConv);
+        //10485760/1,048.0 = 10,1005.496183206 turn to 10
+        MBConv1 = (selByte/Byte) / Byte;
+        
+    //Output
+        cout<<"KB = "<<KBConv<<endl;
+        cout<<"MB = "<<MBConv1;
+    return 0;
