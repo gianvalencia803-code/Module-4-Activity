@@ -1,0 +1,58 @@
+/******************************************************************************
+
+Q1 - Campus Canteen Group 
+
+I - Meal Price, Quantity Orderd, Service-charge Percentage, &
+    Equal distribution of payment per student
+    
+P - Compute = price x quantity, 
+    compute service charge (%), then compute final bill
+    Compute each student's share using floating-point division
+    
+O - Display final bill, Meal Price, Quantity Orderd, Service-charge Percentage, &
+    Equal distribution of payment per student
+
+*******************************************************************************/
+#include <iostream>
+#include <iomanip>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+    //declaration
+    int quantityOrdered, numberSharing;
+    float serviceCharge;
+    double mealPrice;
+    
+    //Input
+    cout<<"Enter Meal Price: ";
+    cin>> mealPrice;
+    
+   cout<<"Enter Quantity: ";
+    cin>> quantityOrdered;
+    
+    
+    cout<<"Enter Service Charge: ";
+    cin>> serviceCharge;
+    
+    cout<<"Enter Number of Sharing: ";
+    cin>> numberSharing;
+
+
+    //Process
+
+    double subtotal = mealPrice * quantityOrdered;
+    double charge = serviceCharge /100;
+    double servicecharge = subtotal * charge;
+    double finaltotal = subtotal + servicecharge;
+    float share = finaltotal / numberSharing;
+    
+    //Output
+     cout<<"Subtotal: " <<fixed<<setprecision(2)<<subtotal<<endl;
+     cout<<"Service Charge: " <<fixed<<setprecision(2)<<servicecharge<<endl;
+     cout<<"Share: " <<share<<endl;
+     cout<<"Total Payment: "<<fixed<<setprecision(2)<<finaltotal<<endl;
+    
+    return 0;
+}
