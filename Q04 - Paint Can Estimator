@@ -1,0 +1,54 @@
+/******************************************************************************
+
+QO4 - Paint Can Estimator
+
+I - wall width, wall, height, # of coats, & coverage per can in square
+    meters.
+
+P - Compute wall area = width x height
+    Compute Total paint area = wall area x number of coats
+    Compute the exact number of cans as total paint area / coverage per can.
+    
+    Use cell() ti determine the whole # of cans that must be purchased
+
+O - Display wall area and exact cans to two decimal places, then
+    Display cans to buy as a whole number.
+
+*******************************************************************************/
+#include <iostream>
+#include <iomanip>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+    double wallWidth, wallHeight, numCoats, perCanM2,
+           wallArea, tolPaintArea, paintAreaCov;
+    
+    //INPUT
+        cout<<"Enter Wall Height: ";
+            cin>>wallWidth;
+        cout<<"Enter Wall Height: ";
+            cin>>wallHeight;
+        cout<<"Enter Number of Coats: ";
+            cin>>numCoats;
+        cout<<"Enter Coverage per can in Square Meters(m^2): ";
+            cin>>perCanM2;
+    
+    //PROCESS
+        wallArea = wallWidth * wallHeight;
+        tolPaintArea = wallArea * numCoats;
+        paintAreaCov = tolPaintArea / perCanM2;
+        
+    //OUTPUT
+        cout<<"Wall Area: "<<fixed<<setprecision(2)<<wallArea<<endl;
+        cout<<"Total Paint Area: "<<fixed<<setprecision(2)
+            <<tolPaintArea<<endl;
+        cout<<"Paint Coverage per Can: "<<fixed<<setprecision(2)
+            <<paintAreaCov<<endl;
+        
+        cout<<"Cans to Buy: "<<ceil(paintAreaCov)<<endl;
+    
+    return 0;
+}
