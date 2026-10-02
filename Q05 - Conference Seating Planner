@@ -1,0 +1,50 @@
+/******************************************************************************
+
+Q05 - Conference Seating Planner
+
+I - # of attendees, seats/table 
+
+P - Compute exact table requirement using floating-point conversion
+        Use cell() to compute the # of tables required
+    Compute Total Available Seats = Tables required x seats per Tables
+    Compute unused seats = total available seats - attendees.
+
+O - Display exact table requirment to two decimal plus the whole num.
+    table and unusued-seat results.
+
+*******************************************************************************/
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+    double numAttends, seatsTable, //inputs
+           tableReq, numTables, tolAvailSt, unusedSt; //Process 
+    
+    //Inputs        
+        cout<<"Number of Attendess: ";
+            cin>>numAttends;
+        cout<<"Seats per Table: ";
+            cin>>seatsTable;
+        
+    //Process
+        tableReq = numAttends / seatsTable;
+        tolAvailSt = ceil(tableReq) * seatsTable;
+        unusedSt = tolAvailSt - numAttends;
+        //unusedSt = numAttends - tolAvailSt;
+        
+    //Output
+
+        cout<<"Table Requirement: "<<float(tableReq)<<endl;
+        cout<<"Table Requirement: "<<ceil(tableReq)<<endl;
+        cout<<"Total Seats: "<<tolAvailSt<<endl;
+        cout<<"Unused Seats: "<<unusedSt<<endl;
+    
+    
+
+    return 0;
+}
