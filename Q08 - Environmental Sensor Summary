@@ -1,0 +1,49 @@
+/******************************************************************************
+
+Q08 - Environmental Sensor Summary
+
+I - Three(3) decimal temperature readings
+
+P - Compute the average temperature.
+    Compute the absolute difference between the 1st & 3rd 
+            readings using fabs()
+
+O - Display floor(average), ceil(average), trunc(average),
+            round(average).
+    Display the original average to three(3) decimal places
+
+*******************************************************************************/
+#include <iostream>
+#include <cmath>
+#include <math.h>
+#include <iomanip>
+
+using namespace std;
+int main()
+{
+    double T1, T2, T3, AverTemp, SubtTemp;
+    
+    //INPUT
+        cout<<"Temperature 1: ";
+            cin>>T1;
+        cout<<"Temperature 2: ";
+            cin>>T2;
+        cout<<"Temperature 3: ";
+            cin>>T3;
+            
+    //PROCESS
+        (AverTemp) = (T1 + T2 +T3)/3;
+        SubtTemp = T1 - T3;
+
+    //DISPLAY
+        cout<<"Average: "<<setprecision(5)<<(AverTemp)<<endl;
+        cout<<"[Temp1 - Temp2]: "<<setprecision(5)
+                                 <<fabs(SubtTemp)<<endl;
+                                 
+        cout<<"Floor: "<<floor(AverTemp)<<endl;
+        cout<<"Ceil: "<<ceil(AverTemp)<<endl;
+        cout<<"Trunc: "<<trunc(AverTemp)<<endl;
+        cout<<"Round: "<<round(AverTemp);
+
+    return 0;
+}
